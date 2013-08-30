@@ -56,10 +56,10 @@
   <ItemGroup>
     <Compile Include="Entities\Article.cs" />
     <Compile Include="Entities\ArticleRate.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Chapter.cs" />
     <Compile Include="DataAccess\IUserDataSource.cs" />
-    <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Migrations\201308281520499_DatabaseInitialization.cs" />
     <Compile Include="Migrations\201308281520499_DatabaseInitialization.Designer.cs">
       <DependentUpon>201308281520499_DatabaseInitialization.cs</DependentUpon>

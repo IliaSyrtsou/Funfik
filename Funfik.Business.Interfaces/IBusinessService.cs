@@ -7,7 +7,7 @@ using Funfik.Core.Entities;
 
 namespace Funfik.Business.Interfaces
 {
-    public interface IBusinessService<TEntity> where TEntity: BaseEntity
-    {
-    }
+    public interface IBusinessService<TEntity> where TEntity : BaseEntity
+{
+}
 }

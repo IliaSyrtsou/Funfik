@@ -11,7 +11,7 @@ namespace Funfik.Core.Entities
     /// <summary>
     /// Class representing an article written by a user.
     /// </summary>
-    public class Article
+    public class Article : BaseEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

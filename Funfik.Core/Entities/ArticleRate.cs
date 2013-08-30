@@ -11,7 +11,7 @@ namespace Funfik.Core.Entities
     /// <summary>
     /// Class representing a rate given to the article by a logged-in user.
     /// </summary>
-    public class ArticleRate
+    public class ArticleRate : BaseEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
