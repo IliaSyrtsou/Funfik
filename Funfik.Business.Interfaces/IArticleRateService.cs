@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Funfik.Business.Interfaces
 {
-    public interface IArticleRateService
+    public interface IArticleRateService: IBusinessService<Article>
     {
     }
 }
