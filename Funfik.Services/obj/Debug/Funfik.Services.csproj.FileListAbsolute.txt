@@ -1,0 +1,10 @@
+D:\VS Projects\Funfik\Funfik.Services\bin\Debug\Funfik.Services.dll
+D:\VS Projects\Funfik\Funfik.Services\bin\Debug\Funfik.Services.pdb
+D:\VS Projects\Funfik\Funfik.Services\obj\Debug\Funfik.Services.dll
+D:\VS Projects\Funfik\Funfik.Services\obj\Debug\Funfik.Services.pdb
+D:\VS Projects\Funfik\Funfik.Services\bin\Debug\Funfik.Services.dll.config
+D:\VS Projects\Funfik\Funfik.Services\bin\Debug\EntityFramework.dll
+D:\VS Projects\Funfik\Funfik.Services\bin\Debug\Funfik.Core.dll
+D:\VS Projects\Funfik\Funfik.Services\bin\Debug\Funfik.Core.pdb
+D:\VS Projects\Funfik\Funfik.Services\bin\Debug\EntityFramework.xml
+D:\VS Projects\Funfik\Funfik.Services\obj\Debug\Funfik.Services.csprojResolveAssemblyReference.cache

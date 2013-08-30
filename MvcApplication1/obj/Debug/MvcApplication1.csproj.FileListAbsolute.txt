@@ -1,0 +1,1 @@
+d:\VS Projects\Funfik\MvcApplication1\obj\Debug\MvcApplication1.csprojResolveAssemblyReference.cache
