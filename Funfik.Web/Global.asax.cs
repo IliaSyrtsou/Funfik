@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Funfik.Web.App_Start;
+using Funfik.Web.Areas.Administration;
+using Funfik.Web.Areas.Default;
 using WebMatrix.WebData;
 
 namespace Funfik.Web
@@ -18,8 +20,6 @@ namespace Funfik.Web
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
-
             DatabaseConfig.Initialize();
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

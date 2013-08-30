@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Funfik.Web.Areas.Administration;
+using Funfik.Web.Areas.Default;
 
 namespace Funfik.Web
 {
@@ -14,21 +15,13 @@ namespace Funfik.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            //routes.MapRoute(
-            //    name: "Default",
-            //    url: "{controller}/{action}/{id}",
-            //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            //);
+            var adminArea = new AdministrationAreaRegistration();
+            var adminAreaContext = new AreaRegistrationContext(adminArea.AreaName, routes);
+            adminArea.RegisterArea(adminAreaContext);
 
-            //routes.MapRoute(
-            //    name: "Administration",
-            //    url: "Administration/{controller}/{action}/{id}",
-            //    defaults: new {action = "Index", id = UrlParameter.Optional});
-
-            //routes.MapRoute(
-            //    name: "Default",
-            //    url: "Default/{controller}/{action}/{id}",
-            //    defaults: new { action = "Index", id = UrlParameter.Optional });
+            var defaultArea = new DefaultAreaRegistration();
+            var defaultAreaContext = new AreaRegistrationContext(defaultArea.AreaName, routes);
+            defaultArea.RegisterArea(defaultAreaContext);
         }
     }
 }

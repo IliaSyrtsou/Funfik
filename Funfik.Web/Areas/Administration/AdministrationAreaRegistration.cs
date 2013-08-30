@@ -15,9 +15,10 @@ namespace Funfik.Web.Areas.Administration
         public override void RegisterArea(AreaRegistrationContext context)
         {
             context.MapRoute(
-                "Administration",
-                "Administration/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                name: "Administration",
+                url: "Administration/{controller}/{action}/{id}",
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "Funfik.Web.Areas.Administration.Controllers" }
             );
         }
     }

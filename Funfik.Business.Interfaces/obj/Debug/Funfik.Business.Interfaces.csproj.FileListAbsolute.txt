@@ -1,0 +1,9 @@
+d:\VS Projects\Funfik\Funfik.Business.Interfaces\obj\Debug\Funfik.Business.Interfaces.csprojResolveAssemblyReference.cache
+d:\VS Projects\Funfik\Funfik.Business.Interfaces\bin\Debug\Funfik.Business.Interfaces.dll
+d:\VS Projects\Funfik\Funfik.Business.Interfaces\bin\Debug\Funfik.Business.Interfaces.pdb
+d:\VS Projects\Funfik\Funfik.Business.Interfaces\bin\Debug\Funfik.Core.dll
+d:\VS Projects\Funfik\Funfik.Business.Interfaces\bin\Debug\EntityFramework.dll
+d:\VS Projects\Funfik\Funfik.Business.Interfaces\bin\Debug\Funfik.Core.pdb
+d:\VS Projects\Funfik\Funfik.Business.Interfaces\bin\Debug\EntityFramework.xml
+d:\VS Projects\Funfik\Funfik.Business.Interfaces\obj\Debug\Funfik.Business.Interfaces.dll
+d:\VS Projects\Funfik\Funfik.Business.Interfaces\obj\Debug\Funfik.Business.Interfaces.pdb

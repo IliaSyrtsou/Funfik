@@ -1,0 +1,4 @@
+d:\VS Projects\Funfik\Funfik.Business.Implementation\bin\Debug\Funfik.Business.Implementation.dll
+d:\VS Projects\Funfik\Funfik.Business.Implementation\bin\Debug\Funfik.Business.Implementation.pdb
+d:\VS Projects\Funfik\Funfik.Business.Implementation\obj\Debug\Funfik.Business.Implementation.dll
+d:\VS Projects\Funfik\Funfik.Business.Implementation\obj\Debug\Funfik.Business.Implementation.pdb

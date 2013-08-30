@@ -37,7 +37,7 @@ namespace T4MVC
     public class AdministrationClass
     {
         public readonly string Name = "Administration";
-        public Funfik.Web.Areas.Administration.Controllers.AdminController Admin = new Funfik.Web.Areas.Administration.Controllers.T4MVC_AdminController();
+        public Funfik.Web.Areas.Administration.Controllers.HomeController Home = new Funfik.Web.Areas.Administration.Controllers.T4MVC_HomeController();
         public T4MVC.Administration.SharedController Shared = new T4MVC.Administration.SharedController();
     }
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

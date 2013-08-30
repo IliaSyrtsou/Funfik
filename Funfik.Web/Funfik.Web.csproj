@@ -178,7 +178,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administration.AdminController.generated.cs">
+    <Compile Include="Administration.HomeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Administration.SharedController.generated.cs">
@@ -194,7 +194,7 @@
     <Compile Include="Areas\Default\DefaultAreaRegistration.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Areas\Default\Controllers\AccountController.cs" />
-    <Compile Include="Areas\Administration\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
     <Compile Include="Areas\Default\Controllers\HomeController.cs" />
     <Compile Include="Default.AccountController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -284,6 +284,8 @@
     <Content Include="Global.asax" />
     <Content Include="Areas\Administration\Views\Web.config" />
     <Content Include="Areas\Default\Views\Web.config" />
+    <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Default\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
@@ -324,16 +326,11 @@
     <Content Include="Images\orderedList7.png" />
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Areas\Default\Views\Account\_ChangePasswordPartial.cshtml" />
-    <Content Include="Areas\Default\Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Areas\Default\Views\Account\_RemoveExternalLoginsPartial.cshtml" />
     <Content Include="Areas\Default\Views\Account\_SetPasswordPartial.cshtml" />
     <Content Include="Areas\Default\Views\Account\Login.cshtml" />
     <Content Include="Areas\Default\Views\Account\Manage.cshtml" />
     <Content Include="Areas\Default\Views\Account\Register.cshtml" />
-    <Content Include="Areas\Default\Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Areas\Default\Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Areas\Default\Views\Home\About.cshtml" />
     <Content Include="Areas\Default\Views\Home\Contact.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
@@ -341,8 +338,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Areas\Default\Views\Home\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\Admin\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\Admin\Users.cshtml" />
+    <Content Include="Areas\Administration\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Home\Users.cshtml" />
     <Content Include="T4MVC.tt.hooks.t4" />
     <Content Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
