@@ -6,7 +6,6 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Funfik.Services;
 using Funfik.Web.App_Start;
 using WebMatrix.WebData;
 

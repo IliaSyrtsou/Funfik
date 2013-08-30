@@ -29,8 +29,6 @@ namespace Funfik.Web
             //    name: "Default",
             //    url: "Default/{controller}/{action}/{id}",
             //    defaults: new { action = "Index", id = UrlParameter.Optional });
-            var administrationAreaRegistration = new AdministrationAreaRegistration();
-            administrationAreaRegistration.RegisterArea(routes);
         }
     }
 }

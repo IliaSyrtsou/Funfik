@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Funfik.Core.Entities
 {
+    /// <summary>
+    /// Class representing a category of an article.
+    /// </summary>
     public class Category
     {
         [Key]

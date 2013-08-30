@@ -358,6 +358,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Funfik.Business.Interfaces\Funfik.Business.Interfaces.csproj">
+      <Project>{f4ed4ea9-4fab-43eb-bfdd-c4da3714c809}</Project>
+      <Name>Funfik.Business.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Funfik.Core\Funfik.Core.csproj">
       <Project>{e0564e5e-d575-4867-9e3b-2584607e2863}</Project>
       <Name>Funfik.Core</Name>
