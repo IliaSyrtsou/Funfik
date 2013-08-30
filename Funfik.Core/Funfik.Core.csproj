@@ -54,21 +54,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Article.cs" />
-    <Compile Include="Entities\ArticleRate.cs" />
-    <Compile Include="Entities\BaseEntity.cs" />
-    <Compile Include="Entities\Category.cs" />
-    <Compile Include="Entities\Chapter.cs" />
-    <Compile Include="DataAccess\IUserDataSource.cs" />
     <Compile Include="Migrations\201308281520499_DatabaseInitialization.cs" />
     <Compile Include="Migrations\201308281520499_DatabaseInitialization.Designer.cs">
       <DependentUpon>201308281520499_DatabaseInitialization.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Entities\Tag.cs" />
-    <Compile Include="Entities\User.cs" />
-    <Compile Include="DataAccess\UserDb.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -78,6 +69,9 @@
     <EmbeddedResource Include="Migrations\201308281520499_DatabaseInitialization.resx">
       <DependentUpon>201308281520499_DatabaseInitialization.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

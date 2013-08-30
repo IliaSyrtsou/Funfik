@@ -9,7 +9,7 @@ namespace Funfik.Web.App_Start
         public static void Initialize()
         {
             WebSecurity.InitializeDatabaseConnection("DefaultConnection", "Users", "UserId", "UserName", autoCreateTables: true);
-            Database.SetInitializer(new CreateDatabaseIfNotExists<UserDb>());
+            Database.SetInitializer(new CreateDatabaseIfNotExists<FunfikDb>());
         }
     }
 }

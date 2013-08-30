@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Funfik.Core.DataAccess;
+using Funfik.Core.Interfaces.DataAccessInterfaces;
 
 namespace Funfik.Web.Areas.Administration.Controllers
 {
@@ -11,7 +12,7 @@ namespace Funfik.Web.Areas.Administration.Controllers
     public partial class HomeController : Controller
     {
 
-        IUserDataSource _db = new UserDb();
+        IDataSource _db = new FunfikDb();
         //
         // GET: /Admin/
 

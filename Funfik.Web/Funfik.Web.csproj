@@ -196,6 +196,7 @@
     <Compile Include="Areas\Default\Controllers\AccountController.cs" />
     <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
     <Compile Include="Areas\Default\Controllers\HomeController.cs" />
+    <Compile Include="TODO.cs" />
     <Compile Include="Default.AccountController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -355,13 +356,17 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Funfik.Business.Interfaces\Funfik.Business.Interfaces.csproj">
-      <Project>{f4ed4ea9-4fab-43eb-bfdd-c4da3714c809}</Project>
-      <Name>Funfik.Business.Interfaces</Name>
+    <ProjectReference Include="..\Funfik.Core.DataAccess\Funfik.Core.DataAccess.csproj">
+      <Project>{20689388-08fc-46f1-af6b-b84709bd1801}</Project>
+      <Name>Funfik.Core.DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Funfik.Core\Funfik.Core.csproj">
-      <Project>{e0564e5e-d575-4867-9e3b-2584607e2863}</Project>
-      <Name>Funfik.Core</Name>
+    <ProjectReference Include="..\Funfik.Core.Entities\Funfik.Core.Entities.csproj">
+      <Project>{d5f31456-2735-4932-ae66-118158996ebc}</Project>
+      <Name>Funfik.Core.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Funfik.Core.Interfaces\Funfik.Core.Interfaces.csproj">
+      <Project>{119c46fb-e867-47f9-b8d7-11e4986f76d9}</Project>
+      <Name>Funfik.Core.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

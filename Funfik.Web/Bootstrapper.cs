@@ -1,5 +1,6 @@
 using System.Web.Mvc;
 using Funfik.Core.DataAccess;
+using Funfik.Core.Interfaces.DataAccessInterfaces;
 using Microsoft.Practices.Unity;
 using Unity.Mvc3;
 
@@ -18,7 +19,7 @@ namespace Funfik.Web
         {
             var container = new UnityContainer();
 
-            container.RegisterType<IUserDataSource, UserDb>();           
+            container.RegisterType<IDataSource, FunfikDb>();           
 
             return container;
         }

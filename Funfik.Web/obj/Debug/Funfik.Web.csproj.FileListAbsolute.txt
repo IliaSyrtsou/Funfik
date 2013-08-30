@@ -9,7 +9,6 @@ d:\VS Projects\Funfik\Funfik.Web\bin\DotNetOpenAuth.OAuth.dll
 d:\VS Projects\Funfik\Funfik.Web\bin\DotNetOpenAuth.OpenId.dll
 d:\VS Projects\Funfik\Funfik.Web\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
 d:\VS Projects\Funfik\Funfik.Web\bin\EntityFramework.dll
-d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Core.dll
 d:\VS Projects\Funfik\Funfik.Web\bin\Microsoft.Web.Infrastructure.dll
 d:\VS Projects\Funfik\Funfik.Web\bin\Microsoft.Web.WebPages.OAuth.dll
 d:\VS Projects\Funfik\Funfik.Web\bin\Newtonsoft.Json.dll
@@ -26,7 +25,6 @@ d:\VS Projects\Funfik\Funfik.Web\bin\System.Web.WebPages.Razor.dll
 d:\VS Projects\Funfik\Funfik.Web\bin\WebGrease.dll
 d:\VS Projects\Funfik\Funfik.Web\bin\WebMatrix.Data.dll
 d:\VS Projects\Funfik\Funfik.Web\bin\WebMatrix.WebData.dll
-d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Core.pdb
 d:\VS Projects\Funfik\Funfik.Web\bin\EntityFramework.xml
 d:\VS Projects\Funfik\Funfik.Web\bin\Newtonsoft.Json.xml
 d:\VS Projects\Funfik\Funfik.Web\bin\System.Net.Http.Formatting.xml
@@ -61,5 +59,9 @@ d:\VS Projects\Funfik\Funfik.Web\bin\Microsoft.Practices.ServiceLocation.xml
 d:\VS Projects\Funfik\Funfik.Web\bin\Microsoft.Practices.Unity.xml
 d:\VS Projects\Funfik\Funfik.Web\bin\Microsoft.Practices.Unity.Configuration.xml
 d:\VS Projects\Funfik\Funfik.Web\bin\T4MVCExtensions.dll
-d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Business.Interfaces.dll
-d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Business.Interfaces.pdb
+d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Core.DataAccess.dll
+d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Core.Entities.dll
+d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Core.Interfaces.dll
+d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Core.DataAccess.pdb
+d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Core.Entities.pdb
+d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Core.Interfaces.pdb
