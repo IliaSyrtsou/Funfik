@@ -1,0 +1,5 @@
+d:\VS Projects\Funfik\Funfik.Core.Entities\bin\Debug\Funfik.Core.Entities.dll
+d:\VS Projects\Funfik\Funfik.Core.Entities\bin\Debug\Funfik.Core.Entities.pdb
+d:\VS Projects\Funfik\Funfik.Core.Entities\obj\Debug\Funfik.Core.Entities.csprojResolveAssemblyReference.cache
+d:\VS Projects\Funfik\Funfik.Core.Entities\obj\Debug\Funfik.Core.Entities.dll
+d:\VS Projects\Funfik\Funfik.Core.Entities\obj\Debug\Funfik.Core.Entities.pdb
