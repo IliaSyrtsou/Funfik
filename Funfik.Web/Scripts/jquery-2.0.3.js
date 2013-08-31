@@ -6966,7 +6966,7 @@ jQuery.extend({
 		timeout: 0,
 		data: null,
 		dataType: null,
-		username: null,
+		Username: null,
 		password: null,
 		cache: null,
 		throws: false,
@@ -7781,7 +7781,7 @@ jQuery.ajaxTransport(function( options ) {
 			send: function( headers, complete ) {
 				var i, id,
 					xhr = options.xhr();
-				xhr.open( options.type, options.url, options.async, options.username, options.password );
+				xhr.open( options.type, options.url, options.async, options.Username, options.password );
 				// Apply custom fields if provided
 				if ( options.xhrFields ) {
 					for ( i in options.xhrFields ) {

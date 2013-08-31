@@ -1,6 +1,7 @@
-﻿using Funfik.Core.Interfaces.EntityServiceInterfaces;
+using Funfik.Core.Entities;
+using Funfik.Core.Interfaces.EntityServiceInterfaces;
 
-namespace Funfik.Business.Implementation.Services
+namespace Funfik.Core.Services.EntityServices
 {
     public class ArticleRateService: IArticleRateService
     {

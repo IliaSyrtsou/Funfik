@@ -12,8 +12,8 @@ d:\VS Projects\Funfik\Funfik.Core.DataAccess\bin\Debug\EntityFramework.xml
 d:\VS Projects\Funfik\Funfik.Core.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 d:\VS Projects\Funfik\Funfik.Core.DataAccess\obj\Debug\Funfik.Core.DataAccess.dll
 d:\VS Projects\Funfik\Funfik.Core.DataAccess\obj\Debug\Funfik.Core.DataAccess.pdb
-d:\VS Projects\Funfik\Funfik.Core.DataAccess\obj\Debug\Funfik.Core.DataAccess.Migrations.DatabaseInitialization.resources
-d:\VS Projects\Funfik\Funfik.Core.DataAccess\obj\Debug\Funfik.Core.DataAccess.csproj.GenerateResource.Cache
 d:\VS Projects\Funfik\Funfik.Core.DataAccess\bin\Debug\WebMatrix.WebData.dll
 d:\VS Projects\Funfik\Funfik.Core.DataAccess\bin\Debug\WebMatrix.WebData.xml
 d:\VS Projects\Funfik\Funfik.Core.DataAccess\bin\Debug\ru\WebMatrix.WebData.resources.dll
+d:\VS Projects\Funfik\Funfik.Core.DataAccess\obj\Debug\Funfik.Core.DataAccess.Migrations.DatabaseInitialization.resources
+d:\VS Projects\Funfik\Funfik.Core.DataAccess\obj\Debug\Funfik.Core.DataAccess.csproj.GenerateResource.Cache

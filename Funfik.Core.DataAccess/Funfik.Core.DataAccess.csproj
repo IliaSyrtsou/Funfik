@@ -54,9 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FunfikDb.cs" />
-    <Compile Include="Migrations\201308301851264_DatabaseInitialization.cs" />
-    <Compile Include="Migrations\201308301851264_DatabaseInitialization.Designer.cs">
-      <DependentUpon>201308301851264_DatabaseInitialization.cs</DependentUpon>
+    <Compile Include="Migrations\201308311714202_DatabaseInitialization.cs" />
+    <Compile Include="Migrations\201308311714202_DatabaseInitialization.Designer.cs">
+      <DependentUpon>201308311714202_DatabaseInitialization.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,10 +75,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201308301851264_DatabaseInitialization.resx">
-      <DependentUpon>201308301851264_DatabaseInitialization.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201308311714202_DatabaseInitialization.resx">
+      <DependentUpon>201308311714202_DatabaseInitialization.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

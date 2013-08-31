@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\Funfik.Web\bin\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ServiceFactory.cs" />
     <Compile Include="EntityServices\ArticleRateService.cs" />
     <Compile Include="EntityServices\ArticleService.cs" />
     <Compile Include="EntityServices\CategoryService.cs" />
@@ -50,6 +52,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Funfik.Core.DataAccess\Funfik.Core.DataAccess.csproj">
+      <Project>{20689388-08fc-46f1-af6b-b84709bd1801}</Project>
+      <Name>Funfik.Core.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Funfik.Core.Entities\Funfik.Core.Entities.csproj">
       <Project>{d5f31456-2735-4932-ae66-118158996ebc}</Project>
       <Name>Funfik.Core.Entities</Name>
@@ -58,6 +64,9 @@
       <Project>{119c46fb-e867-47f9-b8d7-11e4986f76d9}</Project>
       <Name>Funfik.Core.Interfaces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

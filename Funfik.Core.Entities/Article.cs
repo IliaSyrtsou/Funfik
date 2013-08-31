@@ -20,10 +20,12 @@ namespace Funfik.Core.Entities
         public int UserId { get; set; }
 
         [Required]
-        public String Title { get; set; }
+        public int CategoryId { get; set; }
 
         [Required]
-        public Category Category { get; set; }
+        public String Title { get; set; }
+
+        public virtual Category Category { get; set; }
 
         public virtual ICollection<Chapter> Chapters { get; set; }
 

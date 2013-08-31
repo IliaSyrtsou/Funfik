@@ -39,16 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccessInterfaces\IDataSource.cs" />
-    <Compile Include="DataAccessInterfaces\IUserDataSource.cs" />
     <Compile Include="EntityServiceInterfaces\IArticleRateService.cs" />
     <Compile Include="EntityServiceInterfaces\IArticleService.cs" />
-    <Compile Include="EntityServiceInterfaces\IBusinessService.cs" />
     <Compile Include="EntityServiceInterfaces\ICategoryService.cs" />
     <Compile Include="EntityServiceInterfaces\IChapterService.cs" />
+    <Compile Include="EntityServiceInterfaces\IService.cs" />
     <Compile Include="EntityServiceInterfaces\ITagService.cs" />
     <Compile Include="EntityServiceInterfaces\IUserService.cs" />
-    <Compile Include="IServiceFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -39,6 +39,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.0.0-rc1\lib\net45\EntityFramework.dll</HintPath>
@@ -191,6 +197,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Models\ArticleModels.cs" />
+    <Compile Include="Areas\Administration\Models\UserModels.cs" />
     <Compile Include="Areas\Default\DefaultAreaRegistration.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Areas\Default\Controllers\AccountController.cs" />
@@ -287,6 +295,9 @@
     <Content Include="Areas\Default\Views\Web.config" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Default\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Administration\Views\Home\CreateNewUser.cshtml" />
+    <Content Include="Areas\Administration\Views\Home\_ShowUserPartial.cshtml" />
+    <Content Include="Areas\Administration\Views\Home\_ShowUsersListPartial.cshtml" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery-2.0.3.min.js" />
@@ -349,7 +360,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
@@ -367,6 +377,10 @@
     <ProjectReference Include="..\Funfik.Core.Interfaces\Funfik.Core.Interfaces.csproj">
       <Project>{119c46fb-e867-47f9-b8d7-11e4986f76d9}</Project>
       <Name>Funfik.Core.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Funfik.Core.Services\Funfik.Core.Services.csproj">
+      <Project>{A1129681-7052-4882-B2B2-03E707427F05}</Project>
+      <Name>Funfik.Core.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

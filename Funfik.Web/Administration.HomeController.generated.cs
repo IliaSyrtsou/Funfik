@@ -25,9 +25,6 @@ namespace Funfik.Web.Areas.Administration.Controllers
     public partial class HomeController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public HomeController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected HomeController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -44,6 +41,12 @@ namespace Funfik.Web.Areas.Administration.Controllers
             return RedirectToRoutePermanent(callInfo.RouteValueDictionary);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult DeleteUser()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteUser);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public HomeController Actions { get { return MVC.Administration.Home; } }
@@ -62,6 +65,7 @@ namespace Funfik.Web.Areas.Administration.Controllers
         {
             public readonly string Index = "Index";
             public readonly string Users = "Users";
+            public readonly string DeleteUser = "DeleteUser";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -69,9 +73,18 @@ namespace Funfik.Web.Areas.Administration.Controllers
         {
             public const string Index = "Index";
             public const string Users = "Users";
+            public const string DeleteUser = "DeleteUser";
         }
 
 
+        static readonly ActionParamsClass_DeleteUser s_params_DeleteUser = new ActionParamsClass_DeleteUser();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_DeleteUser DeleteUserParams { get { return s_params_DeleteUser; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_DeleteUser
+        {
+            public readonly string userId = "userId";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -82,9 +95,15 @@ namespace Funfik.Web.Areas.Administration.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string _ShowUserPartial = "_ShowUserPartial";
+                public readonly string _ShowUsersListPartial = "_ShowUsersListPartial";
+                public readonly string CreateNewUser = "CreateNewUser";
                 public readonly string Index = "Index";
                 public readonly string Users = "Users";
             }
+            public readonly string _ShowUserPartial = "~/Areas/Administration/Views/Home/_ShowUserPartial.cshtml";
+            public readonly string _ShowUsersListPartial = "~/Areas/Administration/Views/Home/_ShowUsersListPartial.cshtml";
+            public readonly string CreateNewUser = "~/Areas/Administration/Views/Home/CreateNewUser.cshtml";
             public readonly string Index = "~/Areas/Administration/Views/Home/Index.cshtml";
             public readonly string Users = "~/Areas/Administration/Views/Home/Users.cshtml";
         }
@@ -110,6 +129,16 @@ namespace Funfik.Web.Areas.Administration.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Users);
             UsersOverride(callInfo);
+            return callInfo;
+        }
+
+        partial void DeleteUserOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int userId);
+
+        public override System.Web.Mvc.ActionResult DeleteUser(int userId)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteUser);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
+            DeleteUserOverride(callInfo, userId);
             return callInfo;
         }
 

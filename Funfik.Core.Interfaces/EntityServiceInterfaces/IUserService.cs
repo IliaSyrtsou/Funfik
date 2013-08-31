@@ -6,11 +6,28 @@ namespace Funfik.Core.Interfaces.EntityServiceInterfaces
     /// <summary>
     /// An interface which provides user-related functionality.
     /// </summary>
-    public interface IUserService : IBusinessService<User>
+    public interface IUserService
     {
         /// <summary>
         /// Deletes a user from database by user name.
         /// </summary>
-        void DeleteUserByUserName(string userName);
+        void DeleteUserByUserName(string Username);
+
+        /// <summary>
+        /// Deletes a user from database by id.
+        /// </summary>
+        void DeleteUserById(int id);
+
+        /// <summary>
+        /// Adds user to database.
+        /// </summary>
+        void AddUser(User user);
+
+        /// <summary>
+        /// Gets specific number of users from database.
+        /// </summary>
+        /// <param name="quantity">Number of users to get.</param>
+        IEnumerable<User> GetUsers(int quantity);
+
     }
 }

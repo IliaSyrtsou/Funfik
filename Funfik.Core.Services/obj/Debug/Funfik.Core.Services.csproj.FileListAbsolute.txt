@@ -7,3 +7,7 @@ d:\VS Projects\Funfik\Funfik.Core.Services\bin\Debug\Funfik.Core.Interfaces.dll
 d:\VS Projects\Funfik\Funfik.Core.Services\bin\Debug\Funfik.Core.Entities.pdb
 d:\VS Projects\Funfik\Funfik.Core.Services\bin\Debug\Funfik.Core.Interfaces.pdb
 d:\VS Projects\Funfik\Funfik.Core.Services\obj\Debug\Funfik.Core.Services.csprojResolveAssemblyReference.cache
+d:\VS Projects\Funfik\Funfik.Core.Services\bin\Debug\EntityFramework.dll
+d:\VS Projects\Funfik\Funfik.Core.Services\bin\Debug\Funfik.Core.DataAccess.dll
+d:\VS Projects\Funfik\Funfik.Core.Services\bin\Debug\Funfik.Core.DataAccess.pdb
+d:\VS Projects\Funfik\Funfik.Core.Services\bin\Debug\EntityFramework.xml

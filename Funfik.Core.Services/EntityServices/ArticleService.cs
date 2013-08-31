@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Funfik.Core.Entities;
+using Funfik.Core.Interfaces.EntityServiceInterfaces;
 
-namespace Funfik.Business.Implementation.Services
+namespace Funfik.Core.Services.EntityServices
 {
-    public class ArticleService
+    public class ArticleService: IArticleService
     {
+
     }
 }

@@ -1,24 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Funfik.Core.Interfaces.DataAccessInterfaces;
+﻿using System.Web.Mvc;
+using Funfik.Core.Interfaces.EntityServiceInterfaces;
 
 namespace Funfik.Web.Areas.Default.Controllers
 {
     public partial class HomeController : Controller
     {
-        private IDataSource _db;
+        private IUserService _db;
 
-        public HomeController(IDataSource db)
+        public HomeController(IUserService db)
         {
             _db = db;
         }
 
         public virtual ActionResult Index()
         {
-            var users  = _db.Users;    
+            var users  = _db.GetUsers(10);    
 
             return View(users);
         }

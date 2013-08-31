@@ -8,7 +8,7 @@ namespace Funfik.Web.Areas.Default.Models
     {
         public virtual int Id { get; private set; }
 
-        public virtual String UserName { get; set; }
+        public virtual String Username { get; set; }
 
         public virtual ICollection<Article> Articles { get; set; }   
     }

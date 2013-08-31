@@ -125,21 +125,13 @@ namespace Funfik.Web.Areas.Default.Controllers
             public class _ViewNamesClass
             {
                 public readonly string _ChangePasswordPartial = "_ChangePasswordPartial";
-                public readonly string _ExternalLoginsListPartial = "_ExternalLoginsListPartial";
-                public readonly string _RemoveExternalLoginsPartial = "_RemoveExternalLoginsPartial";
                 public readonly string _SetPasswordPartial = "_SetPasswordPartial";
-                public readonly string ExternalLoginConfirmation = "ExternalLoginConfirmation";
-                public readonly string ExternalLoginFailure = "ExternalLoginFailure";
                 public readonly string Login = "Login";
                 public readonly string Manage = "Manage";
                 public readonly string Register = "Register";
             }
             public readonly string _ChangePasswordPartial = "~/Areas/Default/Views/Account/_ChangePasswordPartial.cshtml";
-            public readonly string _ExternalLoginsListPartial = "~/Areas/Default/Views/Account/_ExternalLoginsListPartial.cshtml";
-            public readonly string _RemoveExternalLoginsPartial = "~/Areas/Default/Views/Account/_RemoveExternalLoginsPartial.cshtml";
             public readonly string _SetPasswordPartial = "~/Areas/Default/Views/Account/_SetPasswordPartial.cshtml";
-            public readonly string ExternalLoginConfirmation = "~/Areas/Default/Views/Account/ExternalLoginConfirmation.cshtml";
-            public readonly string ExternalLoginFailure = "~/Areas/Default/Views/Account/ExternalLoginFailure.cshtml";
             public readonly string Login = "~/Areas/Default/Views/Account/Login.cshtml";
             public readonly string Manage = "~/Areas/Default/Views/Account/Manage.cshtml";
             public readonly string Register = "~/Areas/Default/Views/Account/Register.cshtml";

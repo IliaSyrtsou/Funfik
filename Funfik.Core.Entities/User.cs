@@ -15,7 +15,7 @@ namespace Funfik.Core.Entities
         public int UserId { get; set; }
 
         [Required]
-        public String UserName { get; set; }
+        public String Username { get; set; }
 
         [EmailAddress]
         public String Email { get; set; }

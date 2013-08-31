@@ -65,3 +65,8 @@ d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Core.Interfaces.dll
 d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Core.DataAccess.pdb
 d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Core.Entities.pdb
 d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Core.Interfaces.pdb
+d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Core.Services.dll
+d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Core.Services.pdb
+d:\VS Projects\Funfik\Funfik.Web\bin\AutoMapper.dll
+d:\VS Projects\Funfik\Funfik.Web\bin\AutoMapper.Net4.dll
+d:\VS Projects\Funfik\Funfik.Web\bin\AutoMapper.xml

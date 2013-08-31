@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using Funfik.Core.DataAccess;
-using Funfik.Core.Interfaces.DataAccessInterfaces;
+using AutoMapper;
+using Funfik.Core.Entities;
+using Funfik.Core.Interfaces.EntityServiceInterfaces;
+using Funfik.Web.Areas.Administration.Models;
 
 namespace Funfik.Web.Areas.Administration.Controllers
 {
@@ -12,7 +11,12 @@ namespace Funfik.Web.Areas.Administration.Controllers
     public partial class HomeController : Controller
     {
 
-        IDataSource _db = new FunfikDb();
+        public IUserService UserService { get; private set; }
+
+        public HomeController(IUserService userService)
+        {
+            UserService = userService;
+        }
         //
         // GET: /Admin/
 
@@ -23,9 +27,19 @@ namespace Funfik.Web.Areas.Administration.Controllers
 
         public virtual ActionResult Users()
         {
-            var users = _db.Users;
-            return View(users);
+            var users = UserService.GetUsers(10);
+            Mapper.CreateMap<User, UserModel>();
+            var viewModelList = Mapper.Map<IEnumerable<User>, IEnumerable<UserModel>>(users);
+            return View(viewModelList);
         }
-
+        
+        public virtual ActionResult DeleteUser(int userId)
+        {
+            UserService.DeleteUserById(userId);
+            var users = UserService.GetUsers(10);
+            Mapper.CreateMap<User, UserModel>();
+            var viewModelList = Mapper.Map<IEnumerable<User>, IEnumerable<UserModel>>(users);
+            return PartialView("_ShowUsersListPartial", viewModelList);
+        }
     }
 }

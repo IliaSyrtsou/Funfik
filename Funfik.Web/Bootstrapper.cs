@@ -1,6 +1,6 @@
 using System.Web.Mvc;
-using Funfik.Core.DataAccess;
-using Funfik.Core.Interfaces.DataAccessInterfaces;
+using Funfik.Core.Interfaces.EntityServiceInterfaces;
+using Funfik.Core.Services.EntityServices;
 using Microsoft.Practices.Unity;
 using Unity.Mvc3;
 
@@ -19,7 +19,12 @@ namespace Funfik.Web
         {
             var container = new UnityContainer();
 
-            container.RegisterType<IDataSource, FunfikDb>();           
+            container.RegisterType<IArticleService, ArticleService>();
+            container.RegisterType<IArticleRateService, ArticleRateService>();
+            container.RegisterType<ICategoryService, CategoryService>();
+            container.RegisterType<IChapterService, ChapterService>(); 
+            container.RegisterType<ITagService, TagService>();
+            container.RegisterType<IUserService, UserService>(); 
 
             return container;
         }

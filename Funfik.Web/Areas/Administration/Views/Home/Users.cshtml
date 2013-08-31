@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Funfik.Core.Entities.User>
+﻿@model IEnumerable<Funfik.Web.Areas.Administration.Models.UserModel>
 
 @{
     ViewBag.Title = "Users";
@@ -6,28 +6,4 @@
 
 <h2>Users</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.UserName)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
-        </td>
-    </tr>
-}
-
-</table>
+@Html.Partial("_ShowUsersListPartial", Model)

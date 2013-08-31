@@ -5,7 +5,7 @@ namespace Funfik.Core.Interfaces.EntityServiceInterfaces
     /// <summary>
     /// An interface which provides tag-related functionality.
     /// </summary>
-    public interface ITagService : IBusinessService<Tag>
+    public interface ITagService
     {
     }
 }
