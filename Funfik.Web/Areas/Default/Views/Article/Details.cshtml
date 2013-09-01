@@ -1,0 +1,41 @@
+@model Funfik.Core.Entities.Article
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Article</legend>
+
+    <div class="display-label">Title</div>
+    <div class="display-field">@Model.Title</div>
+
+    <div class="display-label">Category</div>
+    <div class="display-field">@(Model.Category == null ? "None" : Model.Category.Name)</div>
+
+    <div class="display-label">Chapters</div>
+    <div class="display-field">@(Model.Chapters == null ? "None" : Model.Chapters.Count.ToString())</div>
+
+    <div class="display-label">ArticleRates</div>
+    <div class="display-field">@(Model.ArticleRates == null ? "None" : Model.ArticleRates.Count.ToString())</div>
+
+    <div class="display-label">Tags</div>
+    <div class="display-field">@(Model.Tags == null ? "None" : Model.Tags.Count.ToString())</div>
+
+    <div class="display-label">CreationDate</div>
+    <div class="display-field">@String.Format("{0:g}", Model.CreationDate)</div>
+
+    <div class="display-label">LastEditDate</div>
+    <div class="display-field">@String.Format("{0:g}", Model.LastEditDate)</div>
+
+    <div class="display-label">User</div>
+    <div class="display-field">@Html.DisplayTextFor(_ => Model.User).ToString()</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ArticleId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

@@ -1,0 +1,77 @@
+@model IEnumerable<Funfik.Core.Entities.Article>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th></th>
+        <th>
+            Title
+        </th>
+        <th>
+            Category
+        </th>
+        <th>
+            Chapters
+        </th>
+        <th>
+            ArticleRates
+        </th>
+        <th>
+            Tags
+        </th>
+        <th>
+            CreationDate
+        </th>
+        <th>
+            LastEditDate
+        </th>
+        <th>
+            User
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ArticleId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ArticleId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ArticleId })
+        </td>
+        <td>
+			@item.Title
+        </td>
+        <td>
+			@(item.Category == null ? "None" : item.Category.Name)
+        </td>
+        <td>
+			@(item.Chapters == null ? "None" : item.Chapters.Count.ToString())
+        </td>
+        <td>
+			@(item.ArticleRates == null ? "None" : item.ArticleRates.Count.ToString())
+        </td>
+        <td>
+			@(item.Tags == null ? "None" : item.Tags.Count.ToString())
+        </td>
+        <td>
+			@String.Format("{0:g}", item.CreationDate)
+        </td>
+        <td>
+			@String.Format("{0:g}", item.LastEditDate)
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.User.Username).ToString()
+        </td>
+    </tr>
+}
+
+</table>
+
+

@@ -4,6 +4,7 @@ using AutoMapper;
 using Funfik.Core.Entities;
 using Funfik.Core.Interfaces.EntityServiceInterfaces;
 using Funfik.Web.Areas.Administration.Models;
+using PagedList;
 
 namespace Funfik.Web.Areas.Administration.Controllers
 {
@@ -25,21 +26,15 @@ namespace Funfik.Web.Areas.Administration.Controllers
             return View();
         }
 
-        public virtual ActionResult Users()
+        public virtual ActionResult Users(int page = 1)
         {
             var users = UserService.GetUsers(10);
             Mapper.CreateMap<User, UserModel>();
             var viewModelList = Mapper.Map<IEnumerable<User>, IEnumerable<UserModel>>(users);
-            return View(viewModelList);
+            int pageSize = 4;
+            return View(viewModelList.ToPagedList(page, pageSize));
         }
         
-        public virtual ActionResult DeleteUser(int userId)
-        {
-            UserService.DeleteUserById(userId);
-            var users = UserService.GetUsers(10);
-            Mapper.CreateMap<User, UserModel>();
-            var viewModelList = Mapper.Map<IEnumerable<User>, IEnumerable<UserModel>>(users);
-            return PartialView("_ShowUsersListPartial", viewModelList);
-        }
+
     }
 }

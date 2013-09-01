@@ -41,29 +41,21 @@ namespace Funfik.Core.DataAccess.Migrations
             for (int i = 1; i < 15; i++)
             {
 
-                WebSecurity.CreateUserAndAccount("test"+i.ToString(), "test", new { Email = "test" + i.ToString() + "@test.test"});
+                WebSecurity.CreateUserAndAccount("test" + i.ToString(), "test", new { Email = "test" + i.ToString() + "@test.test" });
             }
+
             for (int i = 1; i < 15; i++)
             {
                 context.Articles.AddOrUpdate(article => article.ArticleId,
                                              new Article()
                                                  {
-                                                     UserId = 1,
-                                                     Title = "test1",
-                                                     CategoryId = new Random().Next(1, 5),
-                                                     CreationDate = DateTime.Now,
-                                                     LastEditDate = DateTime.Now
-                                                 },
-                                             new Article()
-                                                 {
-                                                     UserId = 2,
-                                                     Title = "test2",
+                                                     ArticleId = i,
+                                                     UserId = i,
+                                                     Title = "Title"+i.ToString(),
                                                      CategoryId = new Random().Next(1, 5),
                                                      CreationDate = DateTime.Now,
                                                      LastEditDate = DateTime.Now
                                                  });
-
-
             }
             context.SaveChanges();
         }

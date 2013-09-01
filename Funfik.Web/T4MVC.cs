@@ -38,6 +38,7 @@ namespace T4MVC
     {
         public readonly string Name = "Administration";
         public Funfik.Web.Areas.Administration.Controllers.HomeController Home = new Funfik.Web.Areas.Administration.Controllers.T4MVC_HomeController();
+        public Funfik.Web.Areas.Administration.Controllers.UserController User = new Funfik.Web.Areas.Administration.Controllers.T4MVC_UserController();
         public T4MVC.Administration.SharedController Shared = new T4MVC.Administration.SharedController();
     }
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -45,7 +46,9 @@ namespace T4MVC
     {
         public readonly string Name = "Default";
         public Funfik.Web.Areas.Default.Controllers.AccountController Account = new Funfik.Web.Areas.Default.Controllers.T4MVC_AccountController();
+        public Funfik.Web.Areas.Default.Controllers.ArticleController Article = new Funfik.Web.Areas.Default.Controllers.T4MVC_ArticleController();
         public Funfik.Web.Areas.Default.Controllers.HomeController Home = new Funfik.Web.Areas.Default.Controllers.T4MVC_HomeController();
+        public Funfik.Web.Areas.Default.Controllers.UserController User = new Funfik.Web.Areas.Default.Controllers.T4MVC_UserController();
     }
 }
 
@@ -68,6 +71,19 @@ internal partial class T4MVC_System_Web_Mvc_ActionResult : System.Web.Mvc.Action
     }
      
     public override void ExecuteResult(System.Web.Mvc.ControllerContext context) { }
+    
+    public string Controller { get; set; }
+    public string Action { get; set; }
+    public string Protocol { get; set; }
+    public RouteValueDictionary RouteValueDictionary { get; set; }
+}
+[GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+internal partial class T4MVC_System_Web_Mvc_ViewResult : System.Web.Mvc.ViewResult, IT4MVCActionResult
+{
+    public T4MVC_System_Web_Mvc_ViewResult(string area, string controller, string action, string protocol = null): base()
+    {
+        this.InitMVCT4Result(area, controller, action, protocol);
+    }
     
     public string Controller { get; set; }
     public string Action { get; set; }
@@ -101,6 +117,7 @@ namespace Links
         public static readonly string knockout_2_1_0_debug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/knockout-2.1.0.debug.min.js") ? Url("knockout-2.1.0.debug.min.js") : Url("knockout-2.1.0.debug.js");
         public static readonly string knockout_2_1_0_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/knockout-2.1.0.min.js") ? Url("knockout-2.1.0.min.js") : Url("knockout-2.1.0.js");
         public static readonly string modernizr_2_6_2_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/modernizr-2.6.2.min.js") ? Url("modernizr-2.6.2.min.js") : Url("modernizr-2.6.2.js");
+        public static readonly string Register_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Register.min.js") ? Url("Register.min.js") : Url("Register.js");
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -108,6 +125,8 @@ namespace Links
         private const string URLPATH = "~/Content";
         public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+        public static readonly string PagedList_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/PagedList.min.css") ? Url("PagedList.min.css") : Url("PagedList.css");
+             
         public static readonly string Site_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/Site.min.css") ? Url("Site.min.css") : Url("Site.css");
              
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]

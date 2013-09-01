@@ -70,3 +70,8 @@ d:\VS Projects\Funfik\Funfik.Web\bin\Funfik.Core.Services.pdb
 d:\VS Projects\Funfik\Funfik.Web\bin\AutoMapper.dll
 d:\VS Projects\Funfik\Funfik.Web\bin\AutoMapper.Net4.dll
 d:\VS Projects\Funfik\Funfik.Web\bin\AutoMapper.xml
+d:\VS Projects\Funfik\Funfik.Web\bin\PagedList.dll
+d:\VS Projects\Funfik\Funfik.Web\bin\PagedList.Mvc.dll
+d:\VS Projects\Funfik\Funfik.Web\bin\PagedList.xml
+d:\VS Projects\Funfik\Funfik.Web\bin\PagedList.Mvc.xml
+d:\VS Projects\Funfik\Funfik.Web\bin\WebActivatorEx.dll

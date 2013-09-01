@@ -1,9 +1,22 @@
-﻿@model IEnumerable<Funfik.Web.Areas.Administration.Models.UserModel>
-
+﻿@using PagedList.Mvc
+@model IEnumerable<Funfik.Web.Areas.Administration.Models.UserModel>
 @{
     ViewBag.Title = "Users";
 }
+    
+    <h2>Users</h2>
 
-<h2>Users</h2>
+    @using (Ajax.BeginForm(MVC.Administration.User.SearchUsers(), new AjaxOptions
+        {
+            HttpMethod = "POST",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "found-users" 
+        }))
+    {
+        <input name="searchString" type="text" />
+        <input type="submit" value="Search"/>
+    }
 
-@Html.Partial("_ShowUsersListPartial", Model)
+<div id="found-users"></div>
+<br/>
+

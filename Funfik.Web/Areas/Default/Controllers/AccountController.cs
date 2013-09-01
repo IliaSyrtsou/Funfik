@@ -52,7 +52,7 @@ namespace Funfik.Web.Areas.Default.Controllers
         {
             WebSecurity.Logout();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction(MVC.Default.Home.Index());
         }
 
         //
@@ -79,7 +79,7 @@ namespace Funfik.Web.Areas.Default.Controllers
                 {
                     WebSecurity.CreateUserAndAccount(model.Username, model.Password);
                     WebSecurity.Login(model.Username, model.Password);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction(MVC.Default.Home.Index());
                 }
                 catch (MembershipCreateUserException e)
                 {
@@ -169,11 +169,6 @@ namespace Funfik.Web.Areas.Default.Controllers
             return View(model);
         }
 
-        //
-        // POST: /Account/ExternalLogin
-
-
-
         #region Helpers
         private ActionResult RedirectToLocal(string returnUrl)
         {
@@ -183,7 +178,7 @@ namespace Funfik.Web.Areas.Default.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction(MVC.Default.Home.Index());
             }
         }
 

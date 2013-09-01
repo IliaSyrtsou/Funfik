@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Funfik.Web.Areas.Administration.Models.UserModel>
+
+<table id="users">
+        @foreach (var item in Model)
+        {
+            <tr>
+                @Html.Partial(MVC.Administration.User.Views._ShowUserPartial, item)
+                <td>
+            
+                    @Ajax.ActionLink("Delete", MVC.Administration.User.DeleteUser(item.UserId),
+                                     new AjaxOptions()
+                                         {
+                                             UpdateTargetId = "users",
+                                             Confirm = "Are you sure that you want to delete this user?",
+                                             InsertionMode = InsertionMode.Replace
+                                         })|
+                    @Html.ActionLink("Show articles", MVC.Default.Article.Details(item.UserId))
+                
+                </td>
+            </tr>
+        }
+</table>

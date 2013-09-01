@@ -4,8 +4,9 @@ using Funfik.Core.Entities;
 
 namespace Funfik.Web.Areas.Default.Models
 {
-    public class UserModel
+    public class UserModel1
     {
+        
         public virtual int Id { get; private set; }
 
         public virtual String Username { get; set; }
