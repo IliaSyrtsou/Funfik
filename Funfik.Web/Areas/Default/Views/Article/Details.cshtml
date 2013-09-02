@@ -15,9 +15,6 @@
     <div class="display-label">Category</div>
     <div class="display-field">@(Model.Category == null ? "None" : Model.Category.Name)</div>
 
-    <div class="display-label">Chapters</div>
-    <div class="display-field">@(Model.Chapters == null ? "None" : Model.Chapters.Count.ToString())</div>
-
     <div class="display-label">Likes</div>
     <div class="display-field">@(Model.Likes == null ? "None" : Model.Likes.Count.ToString())</div>
 
@@ -29,13 +26,22 @@
 
     <div class="display-label">LastEditDate</div>
     <div class="display-field">@String.Format("{0:g}", Model.LastEditDate)</div>
-
-    <div class="display-label">User</div>
-    <div class="display-field">@Html.DisplayTextFor(_ => Model.User).ToString()</div>
+    
+    <div class="display-label">Chapters</div>
+    @foreach (var chapter in Model.Chapters)
+    {
+        <div class="display-field">@Ajax.ActionLink(chapter.Title, MVC.Default.Chapter.ShowChapter(chapter),
+                                                    new AjaxOptions()
+                                                        {
+                                                            UpdateTargetId = "chapter",
+                                                            InsertionMode = InsertionMode.Replace
+                                                        })</div>
+    }
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ArticleId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", MVC.Default.Article.Edit(Model.ArticleId))
 </p>
+
+<div id="chapter"></div>
 
 

@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Funfik.Core.Entities.Article>
+
+@{
+    ViewBag.Title = "Best articles";
+}
+
+<h2>Best articles</h2>
+
+@foreach (var item in Model)
+{
+    @Html.Partial("_ShowArticlePartial", item)
+}

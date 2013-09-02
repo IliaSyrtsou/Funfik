@@ -14,9 +14,7 @@ namespace Funfik.Web.Areas.Default.Controllers
 
         public virtual ActionResult Index()
         {
-            var users  = _db.GetUsers(10);    
-
-            return View(users);
+            return RedirectToAction(MVC.Default.Article.Best());
         }
 
         public virtual ActionResult About()
@@ -31,6 +29,11 @@ namespace Funfik.Web.Areas.Default.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public virtual ActionResult MyArticles()
+        {
+            return RedirectToAction(MVC.Default.Article.UserArticles());
         }
     }
 }

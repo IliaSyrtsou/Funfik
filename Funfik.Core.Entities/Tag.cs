@@ -11,7 +11,7 @@ namespace Funfik.Core.Entities
     /// <summary>
     /// Class representing a tag which can be attached to the article.
     /// </summary>
-    public class Tag : BaseEntity
+    public class Tag 
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

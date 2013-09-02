@@ -11,7 +11,7 @@ namespace Funfik.Core.Entities
     /// <summary>
     /// Class representing a chapter of an article.
     /// </summary>
-    public class Chapter : BaseEntity
+    public class Chapter 
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

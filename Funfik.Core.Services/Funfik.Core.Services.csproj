@@ -52,13 +52,13 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityServices\ArticleService.cs" />
     <Compile Include="EntityServices\CategoryService.cs" />
     <Compile Include="EntityServices\ChapterService.cs" />
     <Compile Include="EntityServices\LikeService.cs" />
-    <Compile Include="EntityServices\ServiceBase.cs" />
     <Compile Include="EntityServices\TagService.cs" />
     <Compile Include="EntityServices\UserService.cs" />
     <Compile Include="HelperServices\MailService.cs" />

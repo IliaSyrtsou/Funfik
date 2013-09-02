@@ -60,6 +60,7 @@ namespace Funfik.Web.Areas.Default.Controllers
             public readonly string Index = "Index";
             public readonly string About = "About";
             public readonly string Contact = "Contact";
+            public readonly string MyArticles = "MyArticles";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -68,6 +69,7 @@ namespace Funfik.Web.Areas.Default.Controllers
             public const string Index = "Index";
             public const string About = "About";
             public const string Contact = "Contact";
+            public const string MyArticles = "MyArticles";
         }
 
 
@@ -120,6 +122,15 @@ namespace Funfik.Web.Areas.Default.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Contact);
             ContactOverride(callInfo);
+            return callInfo;
+        }
+
+        partial void MyArticlesOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        public override System.Web.Mvc.ActionResult MyArticles()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.MyArticles);
+            MyArticlesOverride(callInfo);
             return callInfo;
         }
 

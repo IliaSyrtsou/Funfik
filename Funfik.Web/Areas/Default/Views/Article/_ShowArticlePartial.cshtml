@@ -1,0 +1,34 @@
+﻿@using System.Web.Mvc.Ajax
+@model Funfik.Core.Entities.Article
+
+<div id="showArticle" class="table-bordered">
+    <p>@Html.LabelForModel(Model)</p>
+    <p>@Html.LabelForModel(Model.Title)</p>
+    <p>@Html.LabelForModel(Model.Annotation)</p>
+    <div id=@Model.ArticleId.ToString()>@Html.Partial(MVC.Default.Article.Views._ShowLikes, Model)</div>
+    @if (Request.IsAuthenticated)
+    {
+        <p>
+            @Ajax.ActionLink("Like", MVC.Default.Like.LikeArticle(Model.ArticleId),
+                             new AjaxOptions()
+                                 {
+                                     UpdateTargetId = @Model.ArticleId.ToString(),
+                                     InsertionMode = InsertionMode.Replace
+                                 })
+            @Ajax.ActionLink("Dislike", MVC.Default.Like.DislikeArticle(Model.ArticleId),
+                             new AjaxOptions()
+                                 {
+                                     UpdateTargetId = @Model.ArticleId.ToString(),
+                                     InsertionMode = InsertionMode.Replace
+                                 })
+        </p>
+    }
+    else
+    {
+        <p>
+            You have to be an authenticated user to perform likes
+        </p>
+    }
+    @Html.ActionLink("Details", MVC.Default.Article.Details(Model.ArticleId))
+                                                         
+</div>

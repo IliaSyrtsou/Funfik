@@ -57,6 +57,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.0.0-rc1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MarkdownSharp">
+      <HintPath>..\packages\MarkdownSharp.1.13.0.0\lib\35\MarkdownSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
@@ -215,6 +218,8 @@
     <Compile Include="Areas\Administration\Models\ArticleModels.cs" />
     <Compile Include="Areas\Administration\Models\UserModels.cs" />
     <Compile Include="Areas\Default\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Default\Controllers\ChapterController.cs" />
+    <Compile Include="Areas\Default\Controllers\LikeController.cs" />
     <Compile Include="Areas\Default\Controllers\UserController.cs" />
     <Compile Include="Areas\Default\DefaultAreaRegistration.cs" />
     <Compile Include="Areas\Default\Models\ArticleModels.cs" />
@@ -228,12 +233,19 @@
     <Compile Include="Default.ArticleController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Default.ChapterController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Default.EmailsController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Default.LikeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Default.UserController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\MarkdownHelper.cs" />
     <Compile Include="TODO.cs" />
     <Compile Include="Default.AccountController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -349,6 +361,11 @@
     <Content Include="Areas\Default\Views\Account\RegisterStepTwo.cshtml" />
     <Content Include="Areas\Default\Views\Account\ConfirmationSuccess.cshtml" />
     <Content Include="Areas\Default\Views\Account\ConfirmationFailure.cshtml" />
+    <Content Include="Areas\Default\Views\Article\Best.cshtml" />
+    <Content Include="Areas\Default\Views\Article\_ShowArticlePartial.cshtml" />
+    <Content Include="Areas\Default\Views\Article\UserArticles.cshtml" />
+    <Content Include="Areas\Default\Views\Article\_ShowLikes.cshtml" />
+    <Content Include="Areas\Default\Views\Chapter\_ShowChapterPartial.cshtml" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

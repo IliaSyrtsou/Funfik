@@ -37,6 +37,16 @@ namespace Funfik.Core.Interfaces.EntityServiceInterfaces
         /// <summary>
         /// Gets atricles of a user with given id.
         /// </summary>
-        IEnumerable<Article> GetArticlesByUserId(int userId);
+        IEnumerable<Article> GetUserArticles(int userId);
+
+        /// <summary>
+        /// Gets articles with most likes given.
+        /// </summary>
+        IEnumerable<Article> GetBestArticles();
+
+        /// <summary>
+        /// Updates the article in database.
+        /// </summary>
+        void UpdateArticle(Article article);
     }
 }

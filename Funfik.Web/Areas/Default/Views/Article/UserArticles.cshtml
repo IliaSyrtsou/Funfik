@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Funfik.Core.Entities.Article>
+@{
+    ViewBag.Title = "My articles";
+}
+
+    <h2>My articles</h2>
+
+<p>@Html.ActionLink("Create new article", MVC.Default.Article.Create())</p>
+@foreach (var item in Model)
+    {
+        <p>@Html.Partial("_ShowArticlePartial", item)</p>
+    }

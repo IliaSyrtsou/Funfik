@@ -8,7 +8,7 @@ namespace Funfik.Core.Entities
     /// <summary>
     /// Class representing a user of the fanfic site.
     /// </summary>
-    public class User : BaseEntity
+    public class User 
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

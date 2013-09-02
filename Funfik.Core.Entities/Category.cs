@@ -11,7 +11,7 @@ namespace Funfik.Core.Entities
     /// <summary>
     /// Class representing a category of an article.
     /// </summary>
-    public class Category : BaseEntity
+    public class Category
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

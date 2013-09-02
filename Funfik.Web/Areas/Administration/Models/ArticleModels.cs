@@ -9,7 +9,7 @@ namespace Funfik.Web.Areas.Administration.Models
     /// <summary>
     /// Class representing an article written by a user.
     /// </summary>
-    public class ArticleModels : BaseEntity
+    public class ArticleModels
     {
         
 

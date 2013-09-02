@@ -47,7 +47,9 @@ namespace T4MVC
         public readonly string Name = "Default";
         public Funfik.Web.Areas.Default.Controllers.AccountController Account = new Funfik.Web.Areas.Default.Controllers.T4MVC_AccountController();
         public Funfik.Web.Areas.Default.Controllers.ArticleController Article = new Funfik.Web.Areas.Default.Controllers.T4MVC_ArticleController();
+        public Funfik.Web.Areas.Default.Controllers.ChapterController Chapter = new Funfik.Web.Areas.Default.Controllers.T4MVC_ChapterController();
         public Funfik.Web.Areas.Default.Controllers.HomeController Home = new Funfik.Web.Areas.Default.Controllers.T4MVC_HomeController();
+        public Funfik.Web.Areas.Default.Controllers.LikeController Like = new Funfik.Web.Areas.Default.Controllers.T4MVC_LikeController();
         public Funfik.Web.Areas.Default.Controllers.UserController User = new Funfik.Web.Areas.Default.Controllers.T4MVC_UserController();
         public T4MVC.Default.EmailsController Emails = new T4MVC.Default.EmailsController();
     }

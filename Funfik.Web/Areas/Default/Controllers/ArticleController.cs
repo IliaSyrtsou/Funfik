@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Funfik.Core.Entities;
 using Funfik.Core.DataAccess;
 using Funfik.Core.Interfaces.EntityServiceInterfaces;
+using WebMatrix.WebData;
 
 namespace Funfik.Web.Areas.Default.Controllers
 {
@@ -17,6 +18,7 @@ namespace Funfik.Web.Areas.Default.Controllers
         private FunfikDb context = new FunfikDb();
         private IArticleService ArticleService { get; set; }
         private IChapterService ChapterService { get; set; }
+        private ICategoryService CategoryService { get; set; }
 
         public ArticleController(IArticleService articleService, IChapterService chapterService)
         {
@@ -25,11 +27,11 @@ namespace Funfik.Web.Areas.Default.Controllers
         }
 
         //
-        // GET: /Article/
+        //GET: /Article/Best
         [AllowAnonymous]
-        public virtual ViewResult Index()
+        public virtual ActionResult Best()
         {
-            return View(ArticleService.GetArticles(100));
+            return View(ArticleService.GetBestArticles());
         }
 
         //
@@ -57,13 +59,10 @@ namespace Funfik.Web.Areas.Default.Controllers
         {
             if (ModelState.IsValid)
             {
-                context.Articles.Add(article);
-                context.SaveChanges();
-                return RedirectToAction(MVC.Default.Article.Index());  
+                ArticleService.AddArticle(article);
+                return RedirectToAction(MVC.Default.Article.UserArticles());  
             }
-
-            ViewBag.PossibleUsers = context.Users;
-            ViewBag.PossibleCategories = context.Categories;
+            ViewBag.PossibleCategories = CategoryService.GetCategories();
             return View(article);
         }
         
@@ -72,9 +71,8 @@ namespace Funfik.Web.Areas.Default.Controllers
 
         public virtual ActionResult Edit(int id)
         {
-            Article article = context.Articles.Single(x => x.ArticleId == id);
-            ViewBag.PossibleUsers = context.Users;
-            ViewBag.PossibleCategories = context.Categories;
+            var article = ArticleService.GetArticleById(id);
+            ViewBag.PossibleCategories = CategoryService.GetCategories();
             return View(article);
         }
 
@@ -86,12 +84,11 @@ namespace Funfik.Web.Areas.Default.Controllers
         {
             if (ModelState.IsValid)
             {
-                context.Entry(article).State = EntityState.Modified;
-                context.SaveChanges();
-                return RedirectToAction(MVC.Default.Article.Index());
+                ArticleService.UpdateArticle(article);
+                
+                return RedirectToAction(MVC.Default.Article.UserArticles());
             }
-            ViewBag.PossibleUsers = context.Users;
-            ViewBag.PossibleCategories = context.Categories;
+            ViewBag.PossibleCategories = CategoryService.GetCategories();
             return View(article);
         }
 
@@ -113,7 +110,12 @@ namespace Funfik.Web.Areas.Default.Controllers
             Article article = context.Articles.Single(x => x.ArticleId == id);
             context.Articles.Remove(article);
             context.SaveChanges();
-            return RedirectToAction(MVC.Default.Article.Index());
+            return RedirectToAction(MVC.Default.Article.UserArticles());
+        }
+
+        public virtual ActionResult UserArticles()
+        {
+            return View(ArticleService.GetUserArticles(WebSecurity.CurrentUserId));
         }
 
         protected override void Dispose(bool disposing)

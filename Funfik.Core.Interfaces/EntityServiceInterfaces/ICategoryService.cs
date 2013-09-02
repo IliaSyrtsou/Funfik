@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Funfik.Core.Entities;
 
 namespace Funfik.Core.Interfaces.EntityServiceInterfaces
@@ -7,5 +8,9 @@ namespace Funfik.Core.Interfaces.EntityServiceInterfaces
     /// </summary>
     public interface ICategoryService
     {
+        /// <summary>
+        /// Gets all categories from database.
+        /// </summary>
+        IEnumerable<Category> GetCategories();
     }
 }

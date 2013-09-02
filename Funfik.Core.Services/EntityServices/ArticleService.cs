@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using Funfik.Core.DataAccess;
 using Funfik.Core.Entities;
@@ -28,9 +30,10 @@ namespace Funfik.Core.Services.EntityServices
             throw new System.NotImplementedException();
         }
 
-        void IArticleService.AddArticle(Article user)
+        void IArticleService.AddArticle(Article article)
         {
-            throw new System.NotImplementedException();
+            Database.Articles.Add(article);
+            Database.SaveChanges();
         }
 
         IEnumerable<Article> IArticleService.GetArticles(int quantity)
@@ -43,9 +46,23 @@ namespace Funfik.Core.Services.EntityServices
             return Database.Articles.SingleOrDefault(x => x.ArticleId == id);
         }
 
-        IEnumerable<Article> IArticleService.GetArticlesByUserId(int id)
+        IEnumerable<Article> IArticleService.GetUserArticles(int id)
         {
             return Database.Articles.Where(x => x.UserId == id);
+        }
+
+        IEnumerable<Article> IArticleService.GetBestArticles()
+        {
+            return (from article in Database.Articles
+                    orderby article.Likes.Count descending 
+                    select article).Take(10);
+        }
+
+        void IArticleService.UpdateArticle(Article article)
+        {
+            article.LastEditDate = DateTime.Now;
+            Database.Entry(article).State = EntityState.Modified;
+            Database.SaveChanges();
         }
     }
 }

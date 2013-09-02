@@ -7,5 +7,11 @@ namespace Funfik.Core.Interfaces.EntityServiceInterfaces
     /// </summary>
     public interface ITagService
     {
+        /// <summary>
+        /// Adds tag to the database
+        /// </summary>
+        void AddTag(Tag tag);
+
+        void DeleteTag();
     }
 }

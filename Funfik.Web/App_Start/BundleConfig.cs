@@ -18,6 +18,10 @@ namespace Funfik.Web
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/Bootstrap").Include(
+                        "~/Scripts/bootstrap.js*",
+                        "~/Scripts/bootstrap.min.js*"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -38,6 +42,14 @@ namespace Funfik.Web
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Bootstrap").Include(
+                        "~/Content/Bootstrap/css/bootstrap.css",
+                        "~/Content/Bootstrap/css/bootstrap.min.css",
+                        "~/Content/Bootstrap/css/bootstrap-theme.css",
+                        "~/Content/Bootstrap/css/bootstrap-theme.min.css"));
+
+
         }
     }
 }

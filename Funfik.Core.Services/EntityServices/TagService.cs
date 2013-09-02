@@ -8,5 +8,14 @@ namespace Funfik.Core.Services.EntityServices
     /// </summary>
     public class TagService: ITagService
     {
+        void ITagService.AddTag(Tag tag)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        void ITagService.DeleteTag()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

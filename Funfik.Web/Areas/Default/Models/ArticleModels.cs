@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using Funfik.Core.Entities;
 
 namespace Funfik.Web.Areas.Default.Models
 {
@@ -15,6 +16,7 @@ namespace Funfik.Web.Areas.Default.Models
         public int CategoryId { get; set; }
 
         public String Title { get; set; }
+
     }
 
     public class CreateOrEditArticleModel

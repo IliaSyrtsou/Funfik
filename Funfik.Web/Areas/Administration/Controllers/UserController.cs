@@ -9,6 +9,7 @@ using WebMatrix.WebData;
 
 namespace Funfik.Web.Areas.Administration.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public partial class UserController : Controller
     {
         private IUserService UserService { get; set; }

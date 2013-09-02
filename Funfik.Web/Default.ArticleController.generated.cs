@@ -81,23 +81,25 @@ namespace Funfik.Web.Areas.Default.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
-            public readonly string Index = "Index";
+            public readonly string Best = "Best";
             public readonly string Details = "Details";
             public readonly string Create = "Create";
             public readonly string Edit = "Edit";
             public readonly string Delete = "Delete";
             public readonly string DeleteConfirmed = "Delete";
+            public readonly string UserArticles = "UserArticles";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
-            public const string Index = "Index";
+            public const string Best = "Best";
             public const string Details = "Details";
             public const string Create = "Create";
             public const string Edit = "Edit";
             public const string Delete = "Delete";
             public const string DeleteConfirmed = "Delete";
+            public const string UserArticles = "UserArticles";
         }
 
 
@@ -153,18 +155,26 @@ namespace Funfik.Web.Areas.Default.Controllers
             public class _ViewNamesClass
             {
                 public readonly string _CreateOrEdit = "_CreateOrEdit";
+                public readonly string _ShowArticlePartial = "_ShowArticlePartial";
+                public readonly string _ShowLikes = "_ShowLikes";
+                public readonly string Best = "Best";
                 public readonly string Create = "Create";
                 public readonly string Delete = "Delete";
                 public readonly string Details = "Details";
                 public readonly string Edit = "Edit";
                 public readonly string Index = "Index";
+                public readonly string UserArticles = "UserArticles";
             }
             public readonly string _CreateOrEdit = "~/Areas/Default/Views/Article/_CreateOrEdit.cshtml";
+            public readonly string _ShowArticlePartial = "~/Areas/Default/Views/Article/_ShowArticlePartial.cshtml";
+            public readonly string _ShowLikes = "~/Areas/Default/Views/Article/_ShowLikes.cshtml";
+            public readonly string Best = "~/Areas/Default/Views/Article/Best.cshtml";
             public readonly string Create = "~/Areas/Default/Views/Article/Create.cshtml";
             public readonly string Delete = "~/Areas/Default/Views/Article/Delete.cshtml";
             public readonly string Details = "~/Areas/Default/Views/Article/Details.cshtml";
             public readonly string Edit = "~/Areas/Default/Views/Article/Edit.cshtml";
             public readonly string Index = "~/Areas/Default/Views/Article/Index.cshtml";
+            public readonly string UserArticles = "~/Areas/Default/Views/Article/UserArticles.cshtml";
         }
     }
 
@@ -173,12 +183,12 @@ namespace Funfik.Web.Areas.Default.Controllers
     {
         public T4MVC_ArticleController() : base(Dummy.Instance) { }
 
-        partial void IndexOverride(T4MVC_System_Web_Mvc_ViewResult callInfo);
+        partial void BestOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
-        public override System.Web.Mvc.ViewResult Index()
+        public override System.Web.Mvc.ActionResult Best()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ViewResult(Area, Name, ActionNames.Index);
-            IndexOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Best);
+            BestOverride(callInfo);
             return callInfo;
         }
 
@@ -248,6 +258,15 @@ namespace Funfik.Web.Areas.Default.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DeleteConfirmed);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             DeleteConfirmedOverride(callInfo, id);
+            return callInfo;
+        }
+
+        partial void UserArticlesOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        public override System.Web.Mvc.ActionResult UserArticles()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.UserArticles);
+            UserArticlesOverride(callInfo);
             return callInfo;
         }
 

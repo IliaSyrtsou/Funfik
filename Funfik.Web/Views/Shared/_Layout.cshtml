@@ -7,6 +7,10 @@
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
+        @section scripts{
+            <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")"></script>
+            <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-2.0.3.min.js")"></script>
+        }
     </head>
     <body>
         <header>
@@ -20,6 +24,10 @@
                     </section>
                     <nav>
                         <ul id="menu">
+                            @if (Request.IsAuthenticated)
+                            {
+                                <li>@Html.ActionLink("My articles", MVC.Default.Home.MyArticles())</li>
+                            }
                             <li>@Html.ActionLink("Home", MVC.Default.Home.Index())</li>
                             <li>@Html.ActionLink("About", MVC.Default.Home.About())</li>
                             <li>@Html.ActionLink("Contact", MVC.Default.Home.Contact())</li>

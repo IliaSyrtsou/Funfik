@@ -11,7 +11,7 @@ namespace Funfik.Core.Entities
     /// <summary>
     /// Class representing an article written by a user.
     /// </summary>
-    public class Article : BaseEntity
+    public class Article
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -25,8 +25,10 @@ namespace Funfik.Core.Entities
         [Required]
         public String Title { get; set; }
 
+        [Required]
         public String Annotation { get; set; }
 
+        [Required]
         public virtual Category Category { get; set; }
 
         public virtual ICollection<Chapter> Chapters { get; set; }

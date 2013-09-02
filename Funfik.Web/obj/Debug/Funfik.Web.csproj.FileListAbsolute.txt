@@ -75,3 +75,6 @@ d:\VS Projects\Funfik\Funfik.Web\bin\Postal.dll
 d:\VS Projects\Funfik\Funfik.Web\bin\RazorEngine.dll
 d:\VS Projects\Funfik\Funfik.Web\bin\RazorEngine.pdb
 d:\VS Projects\Funfik\Funfik.Web\bin\RazorEngine.xml
+d:\VS Projects\Funfik\Funfik.Web\bin\MarkdownSharp.dll
+d:\VS Projects\Funfik\Funfik.Web\bin\MarkdownSharp.pdb
+d:\VS Projects\Funfik\Funfik.Web\bin\MarkdownSharp.xml
