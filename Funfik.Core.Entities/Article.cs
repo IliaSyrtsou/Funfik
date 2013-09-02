@@ -25,11 +25,13 @@ namespace Funfik.Core.Entities
         [Required]
         public String Title { get; set; }
 
+        public String Annotation { get; set; }
+
         public virtual Category Category { get; set; }
 
         public virtual ICollection<Chapter> Chapters { get; set; }
 
-        public virtual ICollection<ArticleRate> ArticleRates { get; set; } 
+        public virtual ICollection<Like> Likes { get; set; } 
 
         public virtual ICollection<Tag> Tags { get; set; }
 

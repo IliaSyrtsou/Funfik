@@ -6,8 +6,10 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using DotNetOpenAuth.AspNet;
+using Funfik.Core.Interfaces.HelperServiceInterfaces;
 using Funfik.Web.Areas.Default.Models;
 using Microsoft.Web.WebPages.OAuth;
+using Postal;
 using WebMatrix.WebData;
 
 namespace Funfik.Web.Areas.Default.Controllers
@@ -15,6 +17,12 @@ namespace Funfik.Web.Areas.Default.Controllers
     [Authorize]
     public partial class AccountController : Controller
     {
+        private readonly IMailService _mailService;
+        
+        public AccountController(IMailService mailService)
+        {
+            _mailService = mailService;
+        }
         //
         // GET: /Account/Login
 
@@ -77,9 +85,10 @@ namespace Funfik.Web.Areas.Default.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.Username, model.Password);
-                    WebSecurity.Login(model.Username, model.Password);
-                    return RedirectToAction(MVC.Default.Home.Index());
+                    var confirmationToken = WebSecurity.CreateUserAndAccount(model.Username, model.Password, new {model.Email}, true);
+                    _mailService.SendConfirmationLetter(confirmationToken, model.Email);
+
+                    return RedirectToAction(MVC.Default.Account.RegisterStepTwo());
                 }
                 catch (MembershipCreateUserException e)
                 {
@@ -89,6 +98,33 @@ namespace Funfik.Web.Areas.Default.Controllers
 
             // If we got this far, something failed, redisplay form
             return View(model);
+        }
+
+        [AllowAnonymous]
+        public virtual ActionResult RegisterStepTwo()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        public virtual ActionResult RegisterConfirmation(string id)
+        {
+            if (WebSecurity.ConfirmAccount(id))
+            {
+                return RedirectToAction("ConfirmationSuccess");
+            }
+            return RedirectToAction("ConfirmationFailure");
+        }
+
+        [AllowAnonymous]
+        public virtual ActionResult ConfirmationSuccess()
+        {
+            return View();
+        }
+        [AllowAnonymous]
+        public virtual ActionResult ConfirmationFailure()
+        {
+            return View();
         }
 
         //

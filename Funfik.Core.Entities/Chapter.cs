@@ -20,6 +20,9 @@ namespace Funfik.Core.Entities
         public int ArticleId { get; set; }
 
         [Required]
+        public String Title { get; set; }
+
+        [Required]
         public String Text { get; set; }
 
         [ForeignKey("ArticleId")]

@@ -13,7 +13,7 @@ namespace Funfik.Core.DataAccess.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201308311714202_DatabaseInitialization"; }
+            get { return "201309020123550_DatabaseInitialization"; }
         }
         
         string IMigrationMetadata.Source

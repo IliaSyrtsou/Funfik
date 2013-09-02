@@ -4,7 +4,6 @@ using AutoMapper;
 using Funfik.Core.Entities;
 using Funfik.Core.Interfaces.EntityServiceInterfaces;
 using Funfik.Web.Areas.Administration.Models;
-using PagedList;
 
 namespace Funfik.Web.Areas.Administration.Controllers
 {
@@ -32,7 +31,7 @@ namespace Funfik.Web.Areas.Administration.Controllers
             Mapper.CreateMap<User, UserModel>();
             var viewModelList = Mapper.Map<IEnumerable<User>, IEnumerable<UserModel>>(users);
             int pageSize = 4;
-            return View(viewModelList.ToPagedList(page, pageSize));
+            return View(viewModelList);
         }
         
 

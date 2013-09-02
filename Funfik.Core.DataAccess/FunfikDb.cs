@@ -15,7 +15,7 @@ namespace Funfik.Core.DataAccess
 
         public DbSet<Article> Articles { get; set; }
 
-        public DbSet<ArticleRate> ArticleRates { get; set; }
+        public DbSet<Like> Likes { get; set; }
 
         public DbSet<Category> Categories { get; set; }
 

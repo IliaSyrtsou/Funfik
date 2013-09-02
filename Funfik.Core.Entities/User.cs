@@ -22,7 +22,7 @@ namespace Funfik.Core.Entities
 
         public virtual ICollection<Article> Articles { get; set; }
 
-        public virtual List<ArticleRate> ArticleRates { get; set; }
+        public virtual List<Like> Likes { get; set; }
     }
 }
 

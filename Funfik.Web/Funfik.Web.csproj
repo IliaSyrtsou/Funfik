@@ -67,6 +67,12 @@
     <Reference Include="Microsoft.Practices.Unity.Configuration">
       <HintPath>..\packages\Unity.2.1.505.2\lib\NET35\Microsoft.Practices.Unity.Configuration.dll</HintPath>
     </Reference>
+    <Reference Include="Postal">
+      <HintPath>..\packages\postal.0.8.2\lib\net45\Postal.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\packages\RazorEngine.3.2.0\lib\net40\RazorEngine.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -211,12 +217,18 @@
     <Compile Include="Areas\Default\Controllers\ArticleController.cs" />
     <Compile Include="Areas\Default\Controllers\UserController.cs" />
     <Compile Include="Areas\Default\DefaultAreaRegistration.cs" />
+    <Compile Include="Areas\Default\Models\ArticleModels.cs" />
+    <Compile Include="Areas\Default\Models\CategoryModels.cs" />
     <Compile Include="Areas\Default\Models\ChapterModels.cs" />
+    <Compile Include="Areas\Default\Models\TagModels.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Areas\Default\Controllers\AccountController.cs" />
     <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
     <Compile Include="Areas\Default\Controllers\HomeController.cs" />
     <Compile Include="Default.ArticleController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Default.EmailsController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Default.UserController.generated.cs">
@@ -334,6 +346,9 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Areas\Default\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Default\Views\Account\RegisterStepTwo.cshtml" />
+    <Content Include="Areas\Default\Views\Account\ConfirmationSuccess.cshtml" />
+    <Content Include="Areas\Default\Views\Account\ConfirmationFailure.cshtml" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -397,6 +412,7 @@
       <LastGenOutput>T4MVC.cs</LastGenOutput>
     </Content>
     <Content Include="Views\Shared\_MyTecBitLayoutPage.cshtml" />
+    <Content Include="Areas\Default\Views\Emails\RegEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

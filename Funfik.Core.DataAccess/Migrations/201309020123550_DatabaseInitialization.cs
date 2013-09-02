@@ -8,35 +8,21 @@ namespace Funfik.Core.DataAccess.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.ArticleRates",
-                c => new
-                    {
-                        ArticleRateId = c.Int(nullable: false, identity: true),
-                        UserId = c.Int(nullable: false),
-                        ArticleId = c.Int(nullable: false),
-                        Rate = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.ArticleRateId)
-                .ForeignKey("dbo.Articles", t => t.ArticleId, cascadeDelete: true)
-                .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: false)
-                .Index(t => t.ArticleId)
-                .Index(t => t.UserId);
-            
-            CreateTable(
                 "dbo.Articles",
                 c => new
                     {
                         ArticleId = c.Int(nullable: false, identity: true),
                         UserId = c.Int(nullable: false),
+                        CategoryId = c.Int(nullable: false),
                         Title = c.String(nullable: false),
+                        Annotation = c.String(),
                         CreationDate = c.DateTime(nullable: false),
                         LastEditDate = c.DateTime(nullable: false),
-                        Category_CategoryId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ArticleId)
-                .ForeignKey("dbo.Categories", t => t.Category_CategoryId, cascadeDelete: false)
+                .ForeignKey("dbo.Categories", t => t.CategoryId, cascadeDelete: true)
                 .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.Category_CategoryId)
+                .Index(t => t.CategoryId)
                 .Index(t => t.UserId);
             
             CreateTable(
@@ -54,6 +40,7 @@ namespace Funfik.Core.DataAccess.Migrations
                     {
                         ChapterId = c.Int(nullable: false, identity: true),
                         ArticleId = c.Int(nullable: false),
+                        Title = c.String(nullable: false),
                         Text = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.ChapterId)
@@ -61,17 +48,18 @@ namespace Funfik.Core.DataAccess.Migrations
                 .Index(t => t.ArticleId);
             
             CreateTable(
-                "dbo.Tags",
+                "dbo.Likes",
                 c => new
                     {
-                        TagId = c.Int(nullable: false, identity: true),
+                        LikeId = c.Int(nullable: false, identity: true),
+                        UserId = c.Int(nullable: false),
                         ArticleId = c.Int(nullable: false),
-                        Title = c.String(nullable: false),
-                        UsageCount = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.TagId)
-                .ForeignKey("dbo.Articles", t => t.ArticleId, cascadeDelete: false)
-                .Index(t => t.ArticleId);
+                .PrimaryKey(t => t.LikeId)
+                .ForeignKey("dbo.Articles", t => t.ArticleId, cascadeDelete: true)
+                .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: false)
+                .Index(t => t.ArticleId)
+                .Index(t => t.UserId);
             
             CreateTable(
                 "dbo.Users",
@@ -83,28 +71,41 @@ namespace Funfik.Core.DataAccess.Migrations
                     })
                 .PrimaryKey(t => t.UserId);
             
+            CreateTable(
+                "dbo.Tags",
+                c => new
+                    {
+                        TagId = c.Int(nullable: false, identity: true),
+                        ArticleId = c.Int(nullable: false),
+                        Title = c.String(nullable: false),
+                        UsageCount = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.TagId)
+                .ForeignKey("dbo.Articles", t => t.ArticleId, cascadeDelete: true)
+                .Index(t => t.ArticleId);
+            
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Articles", "UserId", "dbo.Users");
-            DropForeignKey("dbo.ArticleRates", "UserId", "dbo.Users");
             DropForeignKey("dbo.Tags", "ArticleId", "dbo.Articles");
+            DropForeignKey("dbo.Likes", "UserId", "dbo.Users");
+            DropForeignKey("dbo.Articles", "UserId", "dbo.Users");
+            DropForeignKey("dbo.Likes", "ArticleId", "dbo.Articles");
             DropForeignKey("dbo.Chapters", "ArticleId", "dbo.Articles");
-            DropForeignKey("dbo.Articles", "Category_CategoryId", "dbo.Categories");
-            DropForeignKey("dbo.ArticleRates", "ArticleId", "dbo.Articles");
-            DropIndex("dbo.Articles", new[] { "UserId" });
-            DropIndex("dbo.ArticleRates", new[] { "UserId" });
+            DropForeignKey("dbo.Articles", "CategoryId", "dbo.Categories");
             DropIndex("dbo.Tags", new[] { "ArticleId" });
+            DropIndex("dbo.Likes", new[] { "UserId" });
+            DropIndex("dbo.Articles", new[] { "UserId" });
+            DropIndex("dbo.Likes", new[] { "ArticleId" });
             DropIndex("dbo.Chapters", new[] { "ArticleId" });
-            DropIndex("dbo.Articles", new[] { "Category_CategoryId" });
-            DropIndex("dbo.ArticleRates", new[] { "ArticleId" });
-            DropTable("dbo.Users");
+            DropIndex("dbo.Articles", new[] { "CategoryId" });
             DropTable("dbo.Tags");
+            DropTable("dbo.Users");
+            DropTable("dbo.Likes");
             DropTable("dbo.Chapters");
             DropTable("dbo.Categories");
             DropTable("dbo.Articles");
-            DropTable("dbo.ArticleRates");
         }
     }
 }

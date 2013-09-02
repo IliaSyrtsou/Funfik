@@ -25,9 +25,6 @@ namespace Funfik.Web.Areas.Default.Controllers
     public partial class AccountController
     {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public AccountController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected AccountController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -49,6 +46,12 @@ namespace Funfik.Web.Areas.Default.Controllers
         public virtual System.Web.Mvc.ActionResult Login()
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Login);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult RegisterConfirmation()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RegisterConfirmation);
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -75,6 +78,10 @@ namespace Funfik.Web.Areas.Default.Controllers
             public readonly string Login = "Login";
             public readonly string LogOff = "LogOff";
             public readonly string Register = "Register";
+            public readonly string RegisterStepTwo = "RegisterStepTwo";
+            public readonly string RegisterConfirmation = "RegisterConfirmation";
+            public readonly string ConfirmationSuccess = "ConfirmationSuccess";
+            public readonly string ConfirmationFailure = "ConfirmationFailure";
             public readonly string Manage = "Manage";
         }
 
@@ -84,6 +91,10 @@ namespace Funfik.Web.Areas.Default.Controllers
             public const string Login = "Login";
             public const string LogOff = "LogOff";
             public const string Register = "Register";
+            public const string RegisterStepTwo = "RegisterStepTwo";
+            public const string RegisterConfirmation = "RegisterConfirmation";
+            public const string ConfirmationSuccess = "ConfirmationSuccess";
+            public const string ConfirmationFailure = "ConfirmationFailure";
             public const string Manage = "Manage";
         }
 
@@ -104,6 +115,14 @@ namespace Funfik.Web.Areas.Default.Controllers
         public class ActionParamsClass_Register
         {
             public readonly string model = "model";
+        }
+        static readonly ActionParamsClass_RegisterConfirmation s_params_RegisterConfirmation = new ActionParamsClass_RegisterConfirmation();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_RegisterConfirmation RegisterConfirmationParams { get { return s_params_RegisterConfirmation; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_RegisterConfirmation
+        {
+            public readonly string id = "id";
         }
         static readonly ActionParamsClass_Manage s_params_Manage = new ActionParamsClass_Manage();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -126,15 +145,21 @@ namespace Funfik.Web.Areas.Default.Controllers
             {
                 public readonly string _ChangePasswordPartial = "_ChangePasswordPartial";
                 public readonly string _SetPasswordPartial = "_SetPasswordPartial";
+                public readonly string ConfirmationFailure = "ConfirmationFailure";
+                public readonly string ConfirmationSuccess = "ConfirmationSuccess";
                 public readonly string Login = "Login";
                 public readonly string Manage = "Manage";
                 public readonly string Register = "Register";
+                public readonly string RegisterStepTwo = "RegisterStepTwo";
             }
             public readonly string _ChangePasswordPartial = "~/Areas/Default/Views/Account/_ChangePasswordPartial.cshtml";
             public readonly string _SetPasswordPartial = "~/Areas/Default/Views/Account/_SetPasswordPartial.cshtml";
+            public readonly string ConfirmationFailure = "~/Areas/Default/Views/Account/ConfirmationFailure.cshtml";
+            public readonly string ConfirmationSuccess = "~/Areas/Default/Views/Account/ConfirmationSuccess.cshtml";
             public readonly string Login = "~/Areas/Default/Views/Account/Login.cshtml";
             public readonly string Manage = "~/Areas/Default/Views/Account/Manage.cshtml";
             public readonly string Register = "~/Areas/Default/Views/Account/Register.cshtml";
+            public readonly string RegisterStepTwo = "~/Areas/Default/Views/Account/RegisterStepTwo.cshtml";
         }
     }
 
@@ -189,6 +214,43 @@ namespace Funfik.Web.Areas.Default.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Register);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "model", model);
             RegisterOverride(callInfo, model);
+            return callInfo;
+        }
+
+        partial void RegisterStepTwoOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        public override System.Web.Mvc.ActionResult RegisterStepTwo()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RegisterStepTwo);
+            RegisterStepTwoOverride(callInfo);
+            return callInfo;
+        }
+
+        partial void RegisterConfirmationOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string id);
+
+        public override System.Web.Mvc.ActionResult RegisterConfirmation(string id)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.RegisterConfirmation);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            RegisterConfirmationOverride(callInfo, id);
+            return callInfo;
+        }
+
+        partial void ConfirmationSuccessOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        public override System.Web.Mvc.ActionResult ConfirmationSuccess()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ConfirmationSuccess);
+            ConfirmationSuccessOverride(callInfo);
+            return callInfo;
+        }
+
+        partial void ConfirmationFailureOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        public override System.Web.Mvc.ActionResult ConfirmationFailure()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ConfirmationFailure);
+            ConfirmationFailureOverride(callInfo);
             return callInfo;
         }
 
