@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Web.Security;
 using Funfik.Core.Entities;
 using WebMatrix.WebData;
@@ -110,7 +111,28 @@ namespace Funfik.Core.DataAccess.Migrations
             }
             #endregion
 
-            context.SaveChanges();
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException e)
+            {
+                var outputLines = new List<string>();
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    outputLines.Add(string.Format(
+                        "{0}: Entity of type \"{1}\" in state \"{2}\" has the following validation errors:",
+                        DateTime.Now, eve.Entry.Entity.GetType().Name, eve.Entry.State));
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        outputLines.Add(string.Format(
+                            "- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage));
+                    }
+                }
+                System.IO.File.AppendAllLines(@"d:\errors.txt", outputLines);
+                throw;
+            }
         }
     }
 }

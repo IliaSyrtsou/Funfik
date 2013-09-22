@@ -28,7 +28,6 @@ namespace Funfik.Core.Entities
         [Required]
         public String Annotation { get; set; }
 
-        [Required]
         public virtual Category Category { get; set; }
 
         public virtual ICollection<Chapter> Chapters { get; set; }
