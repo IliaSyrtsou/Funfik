@@ -111,9 +111,9 @@ namespace Funfik.Web.Areas.Default.Controllers
         {
             if (WebSecurity.ConfirmAccount(id))
             {
-                return RedirectToAction(MVC.Default.Account.Views.ConfirmationSuccess);
+                return View(MVC.Default.Account.Views.ConfirmationSuccess);
             }
-            return RedirectToAction(MVC.Default.Account.Views.ConfirmationFailure);
+            return View(MVC.Default.Account.Views.ConfirmationFailure);
         }
 
         [AllowAnonymous]
